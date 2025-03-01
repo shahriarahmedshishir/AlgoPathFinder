@@ -9,84 +9,77 @@
   </head>
   <body>
     <header
-      class="w-full h-[13vh] bg-[#270045] flex items-center justify-center fixed top-0 z-50"
+      class="w-full h-[11vh] bg-[#270045] flex items-center justify-center top-0 z-50"
     >
-      <div class="w-[20%] h-full flex items-center justify-center ">
+      <div class="w-[20%] h-full flex items-center justify-center">
         <img
           src="./images/Screenshot 2025-03-01 at 1.44.36 AM.jpeg"
           alt=""
-          class="w-25 h-25 rounded-full"
+          class="w-21 h-21 rounded-full"
         />
       </div>
-      <div class="w-[80%] h-full  flex items-center justify-center gap-4">
-        <input type="text" placeholder="Type your array elements" class="w-180 h-14 border-[1px] border-blue-500/50 rounded-full px-5 bg-gray-300 shadow-md focus-within:outline-[1px] focus-within:outline-blue-500/50" />
-        <button class="w-20 h-10  rounded-xl text-white cursor-pointer bg-blue-500 shadow-lg shadow-blue-500/50" type="submit">Submit</button>
+      <div class="w-[80%] h-full flex items-center justify-center gap-4">
+        <input
+          type="text"
+          placeholder="Type your array elements"
+          class="w-180 h-14 border-[1px] border-blue-500/50 rounded-full px-5 bg-gray-300 shadow-md focus-within:outline-[1px] focus-within:outline-blue-500/50"
+        />
+        <button
+          class="w-20 h-10 rounded-xl text-white cursor-pointer bg-blue-500 shadow-lg shadow-blue-500/50"
+          type="submit"
+        >
+          Submit
+        </button>
       </div>
     </header>
-    <main>
+    <main class="flex">
       <div class="left">
         <ul>
-          <li>
-            <ul>
-              <li>Sorting</li>
-              <ul>
-                <li>Buuble sort</li>
-                <li>Merge Sort</li>
-                <li>Bucket Sort</li>
-                <li>Selection Sort</li>
-                <li>Insertation Sort</li>
-                <li>Quick Sort</li>
-                <li>Heap Sort</li>
-              </ul>
-            </ul>
-          </li>
+          <li>Sorting</li>
+          <li class="sorting-block">Buuble sort</li>
+          <li class="sorting-block">Merge Sort</li>
+          <li class="sorting-block">Bucket Sort</li>
+          <li class="sorting-block">Selection Sort</li>
+          <li class="sorting-block">Insertation Sort</li>
+          <li class="sorting-block">Quick Sort</li>
+          <li class="sorting-block">Heap Sort</li>
+          <li>Algorithm</li>
+          <li class="algo-block">Search</li>
+          <li class="search-block">Linear Search</li>
+          <li class="search-block">Binary Search</li>
+          <li class="algo-block">Graph</li>
+          <li class="graph-block">BFS</li>
+          <li class="graph-block">DFS</li>
+          <li class="graph-block">Dijkstr's algorithm</li>
+          <li class="graph-block">Bellman-Ford Algorith</li>
+          <li class="algo-block">Dynamic</li>
+          <li class="dynamic-block">Fibonacci</li>
+          <li class="dynamic-block">Knapsack</li>
+          <li class="dynamic-block">LCSS</li>
+          <li class="dynamic-block">LISS</li>
 
-          <li>
-            <ul>
-              <li>Algoritm</li>
-              <ul>
-                <li>
-                  <ul>
-                    <li>Search</li>
-                    <ul>
-                      <li></li>
-                      <li></li>
-                    </ul>
-                  </ul>
-                </li>
-                <li>
-                  <ul>
-                    <li>Graph</li>
-                    <ul>
-                      <li></li>
-                      <li></li>
-                    </ul>
-                  </ul>
-                </li>
-                <li>
-                  <ul>
-                    <li>Dynamic</li>
-                    <ul>
-                      <li></li>
-                      <li></li>
-                    </ul>
-                  </ul>
-                </li>
-                <li>
-                  <ul>
-                    <li>Greedy</li>
-                    <ul>
-                      <li></li>
-                      <li></li>
-                    </ul>
-                  </ul>
-                </li>
-              </ul>
-            </ul>
-          </li>
+          <li class="algo-block">Greedy</li>
+
+          <li class="greedy-block">Huffman's Algorith</li>
+          <li class="greedy-block">Kruskal's algorithm</li>
         </ul>
       </div>
-      <div class="right"></div>
+      <div class="right w-[75%]">
+        <div class="typewriter mt-40 mb-10">
+          <h1 class="ml-4 text-4xl">
+            🚀 Interactive Visualization of Data Structures and Algorithms 🎯
+          </h1>
+        </div>
+        <p class="description ml-4 mr-4 text-xl text-justify text-black/70">
+          Understanding Data Structures and Algorithms (DSA) can be challenging
+          without proper visualization. This project aims to provide an
+          interactive platform where users can explore and understand DSA
+          concepts through dynamic animations and intuitive visual
+          representations. From sorting algorithms to graph traversals, this
+          tool helps learners grasp complex concepts in an engaging and
+          interactive way!
+        </p>
+      </div>
     </main>
 
     <script src="./script.js"></script>

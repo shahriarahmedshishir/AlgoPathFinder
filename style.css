@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.left {
+  overflow: scroll;
+  background-color: rgb(239, 232, 223);
+  height: 89vh;
+  width: 25%;
+  font-size: 19px;
+  scrollbar-width: none;
+}
+li {
+  margin: 2px 0;
+  height: 3rem;
+  background-color: #270045;
+  margin-left: 2px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding-left: 20px;
+  color: white;
+  transition: 0.4s;
+  width: 95%;
+}
+li:hover {
+  cursor: pointer;
+  transform: translateX(10px);
+}
+
+.sorting-block {
+  display: none;
+}
+.algo-block {
+  display: none;
+}
+.search-block {
+  display: none;
+}
+.graph-block {
+  display: none;
+}
+.dynamic-block {
+  display: none;
+}
+.greedy-block {
+  display: none;
+}
+.typewriter h1 {
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 0.1rem;
+  animation: animation 5s steps(50);
+}
+@keyframes animation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
