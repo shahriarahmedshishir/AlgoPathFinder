@@ -61,3 +61,11 @@ li:hover {
     width: 100%;
   }
 }
+.arrow-icon-sorting,
+.arrow-icon-algo,
+.arrow-icon-search,
+.arrow-icon-graph,
+.arrow-icon-dynamic,
+.arrow-icon-greedy {
+  transform: rotate(270deg);
+}
