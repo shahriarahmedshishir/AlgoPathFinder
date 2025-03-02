@@ -1,0 +1,20 @@
+.circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    /* background-color: #5b913b; */
+    background-color: #16404d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    margin: 5px;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    font-size: 16px;
+  }
+  button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
