@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body class="w-[100vw] h-[100vh] bg-gray-200 ">
+    <main  class="w-full h-full  flex flex-col items-center justify-center">
+      <div class="w-full h-[8%] flex flex-col items-center justify-center ">
+        <h1 class="font-serif text-3xl tracking-wide">Liner Search</h1>
+        <h1 id="demo" class="font-serif text-[17px] tracking-wide w-full h-[30px] text-center text-red-500"></h1>
+      </div>
+      <div class="w-full h-[30%] flex flex-col items-center justify-center gap-4">
+        <input
+          type="text"
+          id="arrayInput"
+          placeholder="Type your array elements"
+          class="w-180 h-14 border-[1px] border-blue-500/50 rounded-full px-5 bg-gray-300 shadow-md focus-within:outline-[1px] focus-within:outline-blue-500/50"
+        />
+        <input
+        type="text"
+        id="searchNumber"
+        placeholder="Type target number"
+        class="w-80 h-12 text-center border-[1px] border-blue-500/50 rounded-full px-5 bg-gray-300 shadow-md focus-within:outline-[1px] focus-within:outline-blue-500/50"
+      />
+        <button
+          class=" button w-20 h-10 rounded-xl text-white cursor-pointer bg-blue-500 shadow-lg shadow-blue-500/50 font-serif"
+          type="submit" onclick= "startSearch()"> Search
+        </button>
+      </div>
+      <div id="barContainer" class="w-[95%] h-[60%] rounded-xl flex  items-center justify-center"></div>
+        
+    </main>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
