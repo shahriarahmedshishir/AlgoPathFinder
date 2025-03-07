@@ -25,6 +25,10 @@ async function insertionSort() {
       circles[j].style.backgroundColor = "red"; 
       await new Promise((resolve) => setTimeout(resolve, 500));
 
+      circles[j + 1].style.transform = "translateX(-50px)";
+      circles[j].style.transform = "translateX(50px)";
+      await new Promise((resolve) => setTimeout(resolve, 300));
+
       array[j + 1] = array[j]; 
       createCircles(array);
       circles = document.getElementsByClassName("circle");
@@ -37,6 +41,7 @@ async function insertionSort() {
     array[j + 1] = key; 
     createCircles(array);
     circles = document.getElementsByClassName("circle");
+    circles[j + 1].style.backgroundColor = "green";
     circles[i].style.backgroundColor = "#16404d"; 
     await new Promise((resolve) => setTimeout(resolve, 500));
   }
