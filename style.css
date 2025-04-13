@@ -2,10 +2,11 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background-color: #bfcddc;
 }
 .left {
   overflow: scroll;
-  background-color: rgb(239, 232, 223);
+  background-color: #bfcddc;
   height: 89vh;
   width: 25%;
   font-size: 19px;
@@ -14,7 +15,7 @@ body {
 li {
   margin: 2px 0;
   height: 3rem;
-  background-color: #270045;
+  background-color:	#8ea7c1;
   margin-left: 2px;
   display: flex;
   align-items: center;
@@ -26,7 +27,7 @@ li {
 }
 li:hover {
   cursor: pointer;
-  transform: translateX(10px);
+  background-color: #bfcddc;
 }
 
 .sorting-block {
