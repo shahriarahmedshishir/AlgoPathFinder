@@ -16,12 +16,12 @@
         id="arrayInput"
         type="text"
         placeholder="Enter 20 comma-separated numbers"
-        class="px-4 py-2 rounded-full border border-blue-400 bg-white w-[30rem]"
+        class="w-180 h-14 border-[1px] border-blue-500/50 rounded-full px-5 bg-gray-300 shadow-md focus-within:outline-[1px] focus-within:outline-blue-500/50"
       />
       <div class="flex gap-4">
         <button
           onclick="startSorting()"
-          class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow"
+          class="button w-20 h-10 rounded-xl text-white cursor-pointer bg-blue-500 shadow-lg shadow-blue-500/50 font-serif"
         >
           Sort
         </button>
@@ -36,8 +36,10 @@
       <div id="status" class="text-lg font-medium"></div>
       <div
         id="barContainer"
-        class="w-[90%] h-[60%] flex items-center justify-center gap-2 mt-4"
+        class="w-[90%] h-[60%] flex items-center justify-center rounded-xl"
       ></div>
+      <button id="togglePanelButton">Toggle Panel</button>
+      <div id="slidingPanel"></div>
     </main>
     <script src="selection_script.js"></script>
   </body>
