@@ -8,23 +8,61 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body class="w-[100vw] h-[100vh] bg-gray-200">
-    <main  class="w-full h-full  flex flex-col items-center justify-center">
-      <div class="w-full h-[5%] flex flex-col items-center justify-center font-serif text-3xl tracking-wide"><h1>Bubble Sort Visualization</h1></div>
-      <div class="w-full h-[20%] flex items-center justify-center gap-4">
+    <main
+      class="w-full h-full flex flex-col items-center justify-start pt-10 gap-6"
+    >
+      <div class="text-4xl font-serif tracking-wide">
+        Merge Sort Visualization
+      </div>
+
+      <div class="w-full flex items-center justify-center gap-4">
         <input
           type="text"
           id="arrayInput"
-          placeholder="Type 20 array elements with coma separated"
-          class="w-180 h-14 border-[1px] border-blue-500/50 rounded-full px-5 bg-gray-300 shadow-md focus-within:outline-[1px] focus-within:outline-blue-500/50"
+          placeholder="Type 20 numbers separated by commas"
+          class="w-[500px] h-14 border-[1px] border-blue-500/50 rounded-full px-5 bg-gray-300 shadow-md focus:outline-blue-500"
         />
         <button
-          class=" button w-20 h-10 rounded-xl text-white cursor-pointer bg-blue-500 shadow-lg shadow-blue-500/50 font-serif"
-          type="submit" onclick= "startSorting()"
+          onclick="startSorting()"
+          class="w-24 h-10 rounded-xl text-white bg-blue-500 shadow-lg font-serif hover:scale-110 transition-all duration-200"
         >
           Sort
         </button>
+        <button
+          id="pauseBtn"
+          onclick="togglePause()"
+          class="w-24 h-10 rounded-xl text-white bg-red-500 shadow-lg font-serif hover:scale-110 transition-all duration-200"
+        >
+          Pause
+        </button>
       </div>
-      <div id="barContainer" class="w-[95%] h-[60%] rounded-xl flex  items-center justify-center"></div>
+
+      <div id="status" class="text-xl font-medium text-gray-700 mt-2"></div>
+
+      <div
+        id="barContainer"
+        class="w-[95%] h-[60%] mt-4 rounded-xl flex items-center justify-center flex-wrap"
+      ></div>
+      <div id="slidingPanel" class="sliding-panel">
+        <button id="togglePanelButton" class="toggle-button">
+          <svg
+            class="arrow-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <div class="panel-content">
+          <h2 class="panel-title">Sliding Panel Title</h2>
+          <p class="panel-text">
+            Your content goes here. Add anything you want!
+          </p>
+        </div>
+      </div>
+    </main>
 
     <script src="./script.js"></script>
   </body>

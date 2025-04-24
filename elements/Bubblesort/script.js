@@ -1,4 +1,10 @@
 let array = [];
+let isPaused = false;
+
+function updateStatus(message) {
+  const statusDiv = document.getElementById("status");
+  statusDiv.textContent = message;
+}
 
 function createCircles(arr) {
   const container = document.getElementById("barContainer");
@@ -14,21 +20,29 @@ function createCircles(arr) {
 async function bubbleSort() {
   let circles = document.getElementsByClassName("circle");
   for (let i = 0; i < array.length - 1; i++) {
+    updateStatus(`Pass ${i + 1} starting...`);
     for (let j = 0; j < array.length - i - 1; j++) {
+      while (isPaused) {
+        await new Promise((resolve) => setTimeout(resolve, 100));
+      }
+
+      updateStatus(`Comparing ${array[j]} and ${array[j + 1]}`);
       circles[j].style.backgroundColor = "#B82132";
       circles[j + 1].style.backgroundColor = "#B82132";
-      await new Promise((resolve) => setTimeout(resolve, 600));
+      await new Promise((resolve) => setTimeout(resolve, 400));
 
       if (array[j] > array[j + 1]) {
+        updateStatus(`Swapping ${array[j]} and ${array[j + 1]}`);
         [array[j], array[j + 1]] = [array[j + 1], array[j]];
 
         circles[j].style.transform = "translateX(70px)";
         circles[j + 1].style.transform = "translateX(-70px)";
-
-        await new Promise((resolve) => setTimeout(resolve, 600));
+        await new Promise((resolve) => setTimeout(resolve, 400));
 
         createCircles(array);
         circles = document.getElementsByClassName("circle");
+      } else {
+        updateStatus(`No swap needed for ${array[j]} and ${array[j + 1]}`);
       }
 
       circles[j].style.backgroundColor = "#9ACBD0";
@@ -36,8 +50,11 @@ async function bubbleSort() {
       circles[j].style.transform = "translateX(0)";
       circles[j + 1].style.transform = "translateX(0)";
     }
+    await new Promise((resolve) => setTimeout(resolve, 400));
   }
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  updateStatus("Sorting complete!");
+  await new Promise((resolve) => setTimeout(resolve, 600));
   for (let i = 0; i < circles.length; i++) {
     circles[i].style.backgroundColor = "#9ACBD0";
   }
@@ -53,3 +70,19 @@ function startSorting() {
   createCircles(array);
   bubbleSort();
 }
+
+function togglePausePlay() {
+  isPaused = !isPaused;
+  const button = document.getElementById("pausePlayButton");
+  button.textContent = isPaused ? "Play" : "Pause";
+}
+function toggleSlidingPanel() {
+  const panel = document.getElementById("slidingPanel");
+  panel.classList.toggle("open");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .getElementById("togglePanelButton")
+    .addEventListener("click", toggleSlidingPanel);
+});

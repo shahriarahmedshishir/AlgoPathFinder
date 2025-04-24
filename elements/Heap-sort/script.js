@@ -40,7 +40,7 @@ async function swap(i, j) {
   circles[j].style.backgroundColor = "#C890A7";
   circles[i].style.transform = "translateY(0)";
   circles[j].style.transform = "translateY(0)";
-  
+
   await new Promise((resolve) => setTimeout(resolve, 500));
 }
 
@@ -96,3 +96,13 @@ function startSorting() {
   createCircles(array);
   heapSort();
 }
+function toggleSlidingPanel() {
+  const panel = document.getElementById("slidingPanel");
+  panel.classList.toggle("open");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .getElementById("togglePanelButton")
+    .addEventListener("click", toggleSlidingPanel);
+});

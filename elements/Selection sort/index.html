@@ -5,27 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <title>Selection Sort Visualization</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="selection_style.css" />
   </head>
-  <body class="w-[100vw] h-[100vh] bg-gray-200">
-    <main  class="w-full h-full  flex flex-col items-center justify-center">
-      <div class="w-full h-[5%] flex flex-col items-center justify-center font-serif text-3xl tracking-wide"><h1>Bubble Sort Visualization</h1></div>
-      <div class="w-full h-[20%] flex items-center justify-center gap-4">
-        <input
-          type="text"
-          id="arrayInput"
-          placeholder="Type 20 array elements with coma separated"
-          class="w-180 h-14 border-[1px] border-blue-500/50 rounded-full px-5 bg-gray-300 shadow-md focus-within:outline-[1px] focus-within:outline-blue-500/50"
-        />
+  <body class="w-[100vw] h-[100vh] bg-gray-100">
+    <main class="flex flex-col items-center justify-center h-full gap-4">
+      <h1 class="text-3xl font-bold font-serif">
+        Selection Sort Visualization
+      </h1>
+      <input
+        id="arrayInput"
+        type="text"
+        placeholder="Enter 20 comma-separated numbers"
+        class="px-4 py-2 rounded-full border border-blue-400 bg-white w-[30rem]"
+      />
+      <div class="flex gap-4">
         <button
-          class=" button w-20 h-10 rounded-xl text-white cursor-pointer bg-blue-500 shadow-lg shadow-blue-500/50 font-serif"
-          type="submit" onclick= "startSorting()"
+          onclick="startSorting()"
+          class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow"
         >
           Sort
         </button>
+        <button
+          id="pausePlayButton"
+          onclick="togglePausePlay()"
+          class="px-4 py-2 bg-green-500 text-white rounded-lg shadow"
+        >
+          Pause
+        </button>
       </div>
-      <div id="barContainer" class="w-[95%] h-[60%] rounded-xl flex  items-center justify-center"></div>
-
-    <script src="./script.js"></script>
+      <div id="status" class="text-lg font-medium"></div>
+      <div
+        id="barContainer"
+        class="w-[90%] h-[60%] flex items-center justify-center gap-2 mt-4"
+      ></div>
+    </main>
+    <script src="selection_script.js"></script>
   </body>
 </html>

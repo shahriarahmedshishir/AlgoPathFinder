@@ -20,12 +20,14 @@ async function linearSearch(target) {
 
     if (array[i] === target) {
       circles[i].style.backgroundColor = "green";
-      document.getElementById("demo").innerHTML =(`Number ${target} found at index ${i}!`); 
+      document.getElementById(
+        "demo"
+      ).innerHTML = `Number ${target} found at index ${i}!`;
 
       return;
     }
 
-    circles[i].style.backgroundColor = "#16404d"; 
+    circles[i].style.backgroundColor = "#16404d";
   }
 
   alert(`Number ${target} not found.`);
@@ -44,3 +46,13 @@ function startSearch() {
   createCircles(array);
   linearSearch(target);
 }
+function toggleSlidingPanel() {
+  const panel = document.getElementById("slidingPanel");
+  panel.classList.toggle("open");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .getElementById("togglePanelButton")
+    .addEventListener("click", toggleSlidingPanel);
+});
