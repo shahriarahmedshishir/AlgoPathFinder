@@ -40,8 +40,78 @@
         </svg>
       </button>
       <div class="panel-content">
-        <h2 class="panel-title">Sliding Panel Title</h2>
-        <p class="panel-text">Your content goes here. Add anything you want!</p>
+        <section class="bucket-sort-doc">
+          <h1 class="bucket-title">Bucket Sort Algorithm</h1>
+          <p class="bucket-subtitle">When distribution saves the day!</p>
+
+          <div class="bucket-content">
+            <h2>🔹 What is Bucket Sort?</h2>
+            <p>
+              Bucket Sort is a sorting algorithm that distributes elements into
+              several groups called buckets. Each bucket is then sorted
+              individually, either using another sorting algorithm or
+              recursively applying bucket sort.
+            </p>
+
+            <h2>🔹 Step-by-Step Process</h2>
+            <ol>
+              <li>Set up an array of empty buckets.</li>
+              <li>
+                Scatter: Go over the original array, putting each object in its
+                bucket.
+              </li>
+              <li>Sort each non-empty bucket individually.</li>
+              <li>
+                Gather: Visit the buckets in order and put all elements back
+                into the original array.
+              </li>
+            </ol>
+
+            <h2>🔹 Example Walkthrough</h2>
+            <p>
+              Example array:
+              <strong>[0.42, 0.32, 0.23, 0.52, 0.25, 0.47, 0.51]</strong> (range
+              [0,1])
+            </p>
+            <ul>
+              <li>
+                Distribute into buckets based on ranges: (0.2–0.3), (0.3–0.4),
+                (0.4–0.5), (0.5–0.6)
+              </li>
+              <li>Sort individual buckets.</li>
+              <li>
+                Concatenate buckets: [0.23, 0.25, 0.32, 0.42, 0.47, 0.51, 0.52]
+              </li>
+            </ul>
+
+            <h2>🔹 Time Complexity</h2>
+            <table class="bucket-table">
+              <thead>
+                <tr>
+                  <th>Case</th>
+                  <th>Time Complexity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Best Case (Uniform Distribution)</td>
+                  <td>O(n + k)</td>
+                </tr>
+                <tr>
+                  <td>Average Case</td>
+                  <td>O(n + k)</td>
+                </tr>
+                <tr>
+                  <td>Worst Case</td>
+                  <td>O(n<sup>2</sup>)</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2>🔹 Space Complexity</h2>
+            <p>O(n + k) — for creating the buckets.</p>
+          </div>
+        </section>
       </div>
     </div>
 

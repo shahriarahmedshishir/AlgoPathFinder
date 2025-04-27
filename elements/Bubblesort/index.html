@@ -40,8 +40,60 @@
           </svg>
         </button>
         <div class="panel-content">
-          <h2 class="panel-title">Sliding Panel Title</h2>
-          <p class="panel-text">Your content goes here. Add anything you want!</p>
+          <section class="bubble-sort-doc">
+            <h1 class="bubble-title">Bubble Sort Algorithm</h1>
+            <p class="bubble-subtitle">Understand the steps, process, and complexities</p>
+        
+            <div class="bubble-content">
+                <h2>🔹 What is Bubble Sort?</h2>
+                <p>Bubble Sort is a simple comparison-based sorting algorithm. It works by repeatedly swapping the adjacent elements if they are in the wrong order.</p>
+        
+                <h2>🔹 Step-by-Step Process</h2>
+                <ol>
+                    <li>Start from the first element and compare it with the next one.</li>
+                    <li>If the first element is greater than the second, swap them.</li>
+                    <li>Move to the next pair and repeat the process till the last element.</li>
+                    <li>After each pass, the largest element is pushed to the end.</li>
+                    <li>Repeat the above steps for all elements except the sorted ones at the end.</li>
+                </ol>
+        
+                <h2>🔹 Example Walkthrough</h2>
+                <p>Example array: <strong>[5, 2, 9, 1, 5, 6]</strong></p>
+                <ul>
+                    <li>Pass 1: [2, 5, 1, 5, 6, 9]</li>
+                    <li>Pass 2: [2, 1, 5, 5, 6, 9]</li>
+                    <li>Pass 3: [1, 2, 5, 5, 6, 9]</li>
+                    <li>Pass 4: [1, 2, 5, 5, 6, 9] (Already sorted)</li>
+                </ul>
+        
+                <h2>🔹 Time Complexity</h2>
+                <table class="bubble-table">
+                    <thead>
+                        <tr>
+                            <th>Case</th>
+                            <th>Time Complexity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Best Case (Already Sorted)</td>
+                            <td>O(n)</td>
+                        </tr>
+                        <tr>
+                            <td>Average Case</td>
+                            <td>O(n<sup>2</sup>)</td>
+                        </tr>
+                        <tr>
+                            <td>Worst Case (Reversed Order)</td>
+                            <td>O(n<sup>2</sup>)</td>
+                        </tr>
+                    </tbody>
+                </table>
+        
+                <h2>🔹 Space Complexity</h2>
+                <p>O(1) — Bubble Sort is an <strong>in-place</strong> sorting algorithm, meaning it doesn't need extra space.</p>
+            </div>
+        </section>
         </div>
       </div>
       

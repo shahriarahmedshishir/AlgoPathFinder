@@ -56,10 +56,67 @@
           </svg>
         </button>
         <div class="panel-content">
-          <h2 class="panel-title">Sliding Panel Title</h2>
-          <p class="panel-text">
-            Your content goes here. Add anything you want!
-          </p>
+          <section class="merge-sort-doc">
+            <h1 class="merge-title">Merge Sort Algorithm</h1>
+            <p class="merge-subtitle">Divide and Conquer made easy!</p>
+
+            <div class="merge-content">
+              <h2>🔹 What is Merge Sort?</h2>
+              <p>
+                Merge Sort is a highly efficient, comparison-based, divide and
+                conquer sorting algorithm. It divides the array into two halves,
+                recursively sorts them, and then merges the sorted halves.
+              </p>
+
+              <h2>🔹 Step-by-Step Process</h2>
+              <ol>
+                <li>
+                  Divide the unsorted list into n sublists, each containing one
+                  element.
+                </li>
+                <li>
+                  Repeatedly merge sublists to produce new sorted sublists until
+                  there is only one sublist remaining.
+                </li>
+              </ol>
+
+              <h2>🔹 Example Walkthrough</h2>
+              <p>Example array: <strong>[38, 27, 43, 3, 9, 82, 10]</strong></p>
+              <ul>
+                <li>Divide: [38, 27, 43] and [3, 9, 82, 10]</li>
+                <li>Divide further: [38], [27, 43], [3, 9], [82, 10]</li>
+                <li>Sort and merge: [27, 38, 43], [3, 9], [10, 82]</li>
+                <li>Merge: [3, 9, 10, 27, 38, 43, 82]</li>
+              </ul>
+
+              <h2>🔹 Time Complexity</h2>
+              <table class="merge-table">
+                <thead>
+                  <tr>
+                    <th>Case</th>
+                    <th>Time Complexity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Best Case</td>
+                    <td>O(n log n)</td>
+                  </tr>
+                  <tr>
+                    <td>Average Case</td>
+                    <td>O(n log n)</td>
+                  </tr>
+                  <tr>
+                    <td>Worst Case</td>
+                    <td>O(n log n)</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h2>🔹 Space Complexity</h2>
+              <p>O(n) — because it requires temporary arrays for merging.</p>
+            </div>
+          </section>
         </div>
       </div>
     </main>

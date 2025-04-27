@@ -50,10 +50,74 @@
           </svg>
         </button>
         <div class="panel-content">
-          <h2 class="panel-title">Sliding Panel Title</h2>
-          <p class="panel-text">
-            Your content goes here. Add anything you want!
-          </p>
+          <section class="heap-sort-doc">
+            <h1 class="heap-title">Heap Sort Algorithm</h1>
+            <p class="heap-subtitle">Priority Queues at their best!</p>
+
+            <div class="heap-content">
+              <h2>🔹 What is Heap Sort?</h2>
+              <p>
+                Heap Sort is a comparison-based sorting technique based on a
+                Binary Heap data structure. It’s similar to selection sort where
+                we first find the maximum element and place it at the end.
+              </p>
+
+              <h2>🔹 Step-by-Step Process</h2>
+              <ol>
+                <li>Build a Max Heap from the input data.</li>
+                <li>The largest item is stored at the root of the heap.</li>
+                <li>
+                  Swap it with the last item and reduce the heap size by one.
+                </li>
+                <li>
+                  Heapify the root element again to maintain the max heap
+                  property.
+                </li>
+                <li>Repeat the above steps until the heap size is 1.</li>
+              </ol>
+
+              <h2>🔹 Example Walkthrough</h2>
+              <p>Example array: <strong>[4, 10, 3, 5, 1]</strong></p>
+              <ul>
+                <li>Build Max Heap: [10, 5, 3, 4, 1]</li>
+                <li>Swap 10 with 1: [1, 5, 3, 4, 10]</li>
+                <li>Heapify: [5, 4, 3, 1, 10]</li>
+                <li>Swap 5 with 1: [1, 4, 3, 5, 10]</li>
+                <li>Heapify: [4, 1, 3, 5, 10]</li>
+                <li>...and so on until sorted: [1, 3, 4, 5, 10]</li>
+              </ul>
+
+              <h2>🔹 Time Complexity</h2>
+              <table class="heap-table">
+                <thead>
+                  <tr>
+                    <th>Case</th>
+                    <th>Time Complexity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Best Case</td>
+                    <td>O(n log n)</td>
+                  </tr>
+                  <tr>
+                    <td>Average Case</td>
+                    <td>O(n log n)</td>
+                  </tr>
+                  <tr>
+                    <td>Worst Case</td>
+                    <td>O(n log n)</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h2>🔹 Space Complexity</h2>
+              <p>
+                O(1) — Heap Sort is an in-place algorithm with no extra space
+                needed.
+              </p>
+            </div>
+          </section>
         </div>
       </div>
     </section>

@@ -46,10 +46,70 @@
           </svg>
         </button>
         <div class="panel-content">
-          <h2 class="panel-title">Sliding Panel Title</h2>
-          <p class="panel-text">
-            Your content goes here. Add anything you want!
-          </p>
+          <section class="insertion-sort-doc">
+            <h1 class="insertion-title">Insertion Sort Algorithm</h1>
+            <p class="insertion-subtitle">
+              Build the sorted list one element at a time!
+            </p>
+
+            <div class="insertion-content">
+              <h2>🔹 What is Insertion Sort?</h2>
+              <p>
+                Insertion Sort is a simple sorting technique that builds the
+                final sorted array one element at a time. It's much like sorting
+                playing cards in your hands!
+              </p>
+
+              <h2>🔹 Step-by-Step Process</h2>
+              <ol>
+                <li>
+                  Start from the second element (assume the first is already
+                  sorted).
+                </li>
+                <li>Compare the current element with the previous elements.</li>
+                <li>Shift all larger elements one position to the right.</li>
+                <li>Insert the current element into its correct position.</li>
+                <li>Repeat until the array is sorted.</li>
+              </ol>
+
+              <h2>🔹 Example Walkthrough</h2>
+              <p>Example array: <strong>[5, 2, 4, 6, 1, 3]</strong></p>
+              <ul>
+                <li>Insert 2: [2, 5, 4, 6, 1, 3]</li>
+                <li>Insert 4: [2, 4, 5, 6, 1, 3]</li>
+                <li>Insert 6: [2, 4, 5, 6, 1, 3]</li>
+                <li>Insert 1: [1, 2, 4, 5, 6, 3]</li>
+                <li>Insert 3: [1, 2, 3, 4, 5, 6]</li>
+              </ul>
+
+              <h2>🔹 Time Complexity</h2>
+              <table class="insertion-table">
+                <thead>
+                  <tr>
+                    <th>Case</th>
+                    <th>Time Complexity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Best Case (Already Sorted)</td>
+                    <td>O(n)</td>
+                  </tr>
+                  <tr>
+                    <td>Average Case</td>
+                    <td>O(n<sup>2</sup>)</td>
+                  </tr>
+                  <tr>
+                    <td>Worst Case (Reversed Order)</td>
+                    <td>O(n<sup>2</sup>)</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h2>🔹 Space Complexity</h2>
+              <p>O(1) — it sorts in place without using extra memory.</p>
+            </div>
+          </section>
         </div>
       </div>
     </main>

@@ -96,3 +96,60 @@ button:hover {
   line-height: 1.6;
   color: #333;
 }
+.insertion-sort-doc {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #e3f2fd;
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.insertion-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1976d2;
+  margin-bottom: 0.5rem;
+}
+
+.insertion-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.insertion-content h2 {
+  color: #1976d2;
+  margin-top: 2rem;
+}
+
+.insertion-content p,
+.insertion-content ol,
+.insertion-content ul {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.insertion-content ol,
+.insertion-content ul {
+  margin-left: 2rem;
+}
+
+.insertion-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.insertion-table th,
+.insertion-table td {
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.insertion-table th {
+  background-color: #1976d2;
+  color: white;
+}
