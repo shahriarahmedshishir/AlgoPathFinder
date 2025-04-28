@@ -5,22 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css">
-    <title>DFS Visualization</title>
+    <title>Document</title>
 </head>
-<body class="w-[100vw] h-[100vh] bg-gray-200">
-    <main class="w-full h-full flex flex-col items-center justify-center">
-        <div class="w-full h-[8%] flex flex-col items-center justify-center">
-            <h1 class="font-serif text-3xl tracking-wide">DFS Traversal</h1>
-            <h1 id="demo" class="font-serif text-[17px] tracking-wide w-full h-[30px] text-center text-red-500"></h1>
+<body class="w-[100vw] h-[100vh] bg-gray-200 flex flex-col gap-5 justify-center items-center">
+    <div class="flex justify-center items-center flex-col w-full gap-2 h-[15%]  ">
+        <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas" class="w-180 h-20 border-[1px] border-blue-500/50 rounded-full px-5 bg-gray-300 shadow-md focus-within:outline-[1px] focus-within:outline-blue-500/50">
+        <div class="flex justify-center items-center w-full h-20 gap-5 ">
+            <button onclick="createTree()" class=" button w-40 h-10 rounded-xl text-white cursor-pointer bg-blue-500 shadow-lg shadow-blue-500/50 font-serif">Generate Tree</button>
+            <button onclick="startDFS()" class=" button w-20 h-10 rounded-xl text-white cursor-pointer bg-blue-500 shadow-lg shadow-blue-500/50 font-serif">Start DFS</button>
         </div>
-        <div class="w-full h-[30%] flex flex-col items-center justify-center gap-4">
-            <button
-                class="button w-20 h-10 rounded-xl text-white cursor-pointer bg-blue-500 shadow-lg shadow-blue-500/50 font-serif"
-                type="submit" onclick="startDFS()"> Start DFS
-            </button>
-        </div>
-        <div id="treeContainer" class="w-[95%] h-[60%] rounded-xl flex items-center justify-center"></div>
-    </main>
+    </div>
+    <div id="treeContainer" class="w-[98%] h-[80%] rounded-xl "></div>
+
 
     <script src="script.js"></script>
 </body>
