@@ -1,107 +1,115 @@
 let array = [];
-let isPaused = false;
 
-function updateStatus(message) {
-  document.getElementById("status").textContent = message;
-}
-
-function createCircles(arr, highlight = {}) {
+function createCircles(arr) {
   const container = document.getElementById("barContainer");
   container.innerHTML = "";
-
-  arr.forEach((value, index) => {
-    const div = document.createElement("div");
-    div.className = "circle";
-
-    if (highlight.sorted?.includes(index)) div.classList.add("sorted");
-    else if (highlight.min === index) div.classList.add("min");
-    else if (highlight.active === index) div.classList.add("active");
-
-    div.textContent = value;
-    container.appendChild(div);
+  arr.forEach((value) => {
+    const circle = document.createElement("div");
+    circle.classList.add("circle");
+    circle.textContent = value;
+    container.appendChild(circle);
   });
 }
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+function showStep(message) {
+  const stepInfo = document.getElementById("stepInfo");
+  stepInfo.textContent = message;
+}
+
+// Modified swap animation: Y first, X swap second
+async function animateSwap(i, j) {
+  let circles = document.getElementsByClassName("circle");
+
+  circles[i].style.backgroundColor = "red";
+  circles[j].style.backgroundColor = "red";
+
+  // Step 1: Move up/down first
+  circles[i].style.transform = "translateY(-70px)";
+  circles[j].style.transform = "translateY(70px)";
+  await new Promise((resolve) => setTimeout(resolve, 500));
+
+  // Step 2: Move horizontally (swap)
+  let distance = (j - i) * 45; // 40px width + 5px gap
+  circles[i].style.transform = `translate(${distance}px, -70px)`;
+  circles[j].style.transform = `translate(${-distance}px, 70px)`;
+  await new Promise((resolve) => setTimeout(resolve, 500));
+
+  // Swap array values
+  [array[i], array[j]] = [array[j], array[i]];
+
+  // Redraw
+  createCircles(array);
+  circles = document.getElementsByClassName("circle");
+
+  // Step 3: Drop down to normal
+  circles[i].style.transform = "translateY(0)";
+  circles[j].style.transform = "translateY(0)";
+  await new Promise((resolve) => setTimeout(resolve, 300));
 }
 
 async function selectionSort() {
-  for (let i = 0; i < array.length; i++) {
-    let minIdx = i;
+  let n = array.length;
 
-    for (let j = i + 1; j < array.length; j++) {
-      await handlePause();
-      updateStatus(`Comparing ${array[j]} with ${array[minIdx]}`);
-      createCircles(array, { active: j, min: minIdx, sorted: getSortedIndices(i) });
-      await sleep(400);
+  for (let i = 0; i < n - 1; i++) {
+    let minIdx = i;
+    let circles = document.getElementsByClassName("circle");
+
+    circles[i].style.backgroundColor = "blue"; // Current index
+    showStep(`Step ${i + 1}: Searching minimum from index ${i}`);
+
+    for (let j = i + 1; j < n; j++) {
+      circles[j].style.backgroundColor = "#ff8b1a"; // Comparing
+      await new Promise((resolve) => setTimeout(resolve, 300));
 
       if (array[j] < array[minIdx]) {
+        if (minIdx !== i) circles[minIdx].style.backgroundColor = "#7899cc"; // Reset old min
         minIdx = j;
+        circles[minIdx].style.backgroundColor = "red"; // New minimum
+      } else {
+        circles[j].style.backgroundColor = "#7899cc"; // Reset color after comparing
       }
+      await new Promise((resolve) => setTimeout(resolve, 300));
     }
 
     if (minIdx !== i) {
-      await swapAndVisualize(i, minIdx);
+      showStep(`Swapping index ${i} and ${minIdx}`);
+      await animateSwap(i, minIdx);
     }
+
+    circles = document.getElementsByClassName("circle");
+    for (let k = 0; k <= i; k++) {
+      circles[k].style.backgroundColor = "green"; // Sorted till index i
+    }
+    await new Promise((resolve) => setTimeout(resolve, 300));
+    showStep(`Step ${i + 1} completed: Placed ${array[i]} at position ${i}`);
   }
 
-  finalizeSorting();
-}
-
-async function handlePause() {
-  while (isPaused) {
-    await sleep(100);
+  let circles = document.getElementsByClassName("circle");
+  for (let i = 0; i < n; i++) {
+    circles[i].style.backgroundColor = "green";
   }
-}
-
-function getSortedIndices(currentIndex) {
-  return [...Array(currentIndex).keys()];
-}
-
-async function swapAndVisualize(i, minIdx) {
-  updateStatus(`Swapping ${array[i]} with ${array[minIdx]}`);
-  [array[i], array[minIdx]] = [array[minIdx], array[i]];
-  createCircles(array, { sorted: getSortedIndices(i + 1) });
-  await sleep(400);
-}
-
-function finalizeSorting() {
-  updateStatus("Selection Sort Complete!");
-  createCircles(array, { sorted: [...Array(array.length).keys()] });
+  showStep("Sorting Completed!");
 }
 
 function startSorting() {
   const input = document.getElementById("arrayInput").value;
-  array = parseInput(input);
+  array = input.split(",").map(Number);
 
-  if (!isValidArray(array)) {
-    alert("Please enter exactly 20 valid numbers.");
+  if (array.length !== 20 || array.some(isNaN)) {
+    alert("Please enter exactly 20 valid numbers separated by commas.");
     return;
   }
 
   createCircles(array);
   selectionSort();
 }
-
-function parseInput(input) {
-  return input.split(",").map(Number);
-}
-
-function isValidArray(arr) {
-  return arr.length === 20 && arr.every((num) => !isNaN(num));
-}
-
-function togglePausePlay() {
-  isPaused = !isPaused;
-  document.getElementById("pausePlayButton").textContent = isPaused ? "Play" : "Pause";
-}
-
 function toggleSlidingPanel() {
   const panel = document.getElementById("slidingPanel");
   panel.classList.toggle("open");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("togglePanelButton").addEventListener("click", toggleSlidingPanel);
+  document
+    .getElementById("togglePanelButton")
+    .addEventListener("click", toggleSlidingPanel);
 });

@@ -1,46 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <title>Selection Sort Visualization</title>
-    <link rel="stylesheet" href="selection_style.css" />
-  </head>
-  <body class="w-[100vw] h-[100vh] bg-gray-100">
-    <main class="flex flex-col items-center justify-center h-full gap-4">
-      <h1 class="text-3xl font-bold font-serif">
-        Selection Sort Visualization
-      </h1>
-      <input
-        id="arrayInput"
-        type="text"
-        placeholder="Enter 20 comma-separated numbers"
-        class="w-180 h-14 border-[1px] border-blue-500/50 rounded-full px-5 bg-gray-300 shadow-md focus-within:outline-[1px] focus-within:outline-blue-500/50"
-      />
-      <div class="flex gap-4">
+    <link rel="stylesheet" href="style.css">
+    <title>Selection Sort</title>
+</head>
+<body class="w-[100vw] h-[100vh] bg-gray-200 ">
+    <main  class="w-full h-full  flex flex-col items-center justify-center ">
+      <div class="w-full h-[5%] flex flex-col items-center justify-center font-serif text-3xl tracking-wide"><h1>Selection Sort</h1></div>
+      <div class="w-full h-[20%] flex items-center justify-center gap-4">
+        <input
+          type="text"
+          id="arrayInput"
+          placeholder="Enter 20 numbers separated by commas"
+          class="w-180 h-14 border-[1px] border-blue-500/50 rounded-full px-5 bg-gray-300 shadow-md focus-within:outline-[1px] focus-within:outline-blue-500/50"
+        />
         <button
-          onclick="startSorting()"
-          class="button w-20 h-10 rounded-xl text-white cursor-pointer bg-blue-500 shadow-lg shadow-blue-500/50 font-serif"
+          class=" button w-20 h-10 rounded-xl text-white cursor-pointer bg-blue-500 shadow-lg shadow-blue-500/50 font-serif"
+          type="submit" onclick= "startSorting()"
         >
           Sort
         </button>
-        <button
-          id="pausePlayButton"
-          onclick="togglePausePlay()"
-          class="px-4 py-2 bg-green-500 text-white rounded-lg shadow"
-        >
-          Pause
-        </button>
       </div>
-      <div id="status" class="text-lg font-medium"></div>
-      <div
-        id="barContainer"
-        class="w-[90%] h-[60%] flex items-center justify-center rounded-xl"
-      ></div>
-      <button id="togglePanelButton">Toggle Panel</button>
-      <div id="slidingPanel"></div>
+      <div id="stepInfo" style="font-size: 25px; color: #cb1c1c; font-weight: bold; margin-top: 10px; margin-bottom: 20px; text-align: center;"></div>
+      <div id="barContainer" class="w-[95%] h-[60%] rounded-xl flex  items-center justify-center"></div>
+      <div id="slidingPanel" class="sliding-panel">
+        <button id="togglePanelButton" class="toggle-button">
+          <svg
+            class="arrow-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <div class="panel-content">
+          <section class="selection-sort-doc">
+            <h1 class="selection-title">Selection Sort Algorithm</h1>
+            <p class="selection-subtitle">
+              Find the smallest and put it in place — step by step!
+            </p>
+      
+            <div class="selection-content">
+              <h2>🔹 What is Selection Sort?</h2>
+              <p>
+                Selection Sort is a simple sorting algorithm that repeatedly finds the
+                minimum element from the unsorted part and puts it at the beginning.
+              </p>
+      
+              <h2>🔹 Step-by-Step Process</h2>
+              <ol>
+                <li>Start with the first element as the current minimum.</li>
+                <li>Compare it with every other element to find the actual minimum.</li>
+                <li>Swap the found minimum with the current element.</li>
+                <li>Move the boundary of the sorted and unsorted array by one.</li>
+                <li>Repeat until the entire array is sorted.</li>
+              </ol>
+      
+              <h2>🔹 Example Walkthrough</h2>
+              <p>Example array: <strong>[5, 2, 4, 6, 1, 3]</strong></p>
+              <ul>
+                <li>Find min (1), swap with 5 → [1, 2, 4, 6, 5, 3]</li>
+                <li>Next min (2), already in place → [1, 2, 4, 6, 5, 3]</li>
+                <li>Next min (3), swap with 4 → [1, 2, 3, 6, 5, 4]</li>
+                <li>Next min (4), swap with 6 → [1, 2, 3, 4, 5, 6]</li>
+                <li>Continue until sorted.</li>
+              </ul>
+      
+              <h2>🔹 Time Complexity</h2>
+              <table class="selection-table">
+                <thead>
+                  <tr>
+                    <th>Case</th>
+                    <th>Time Complexity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Best Case</td>
+                    <td>O(n<sup>2</sup>)</td>
+                  </tr>
+                  <tr>
+                    <td>Average Case</td>
+                    <td>O(n<sup>2</sup>)</td>
+                  </tr>
+                  <tr>
+                    <td>Worst Case</td>
+                    <td>O(n<sup>2</sup>)</td>
+                  </tr>
+                </tbody>
+              </table>
+      
+              <h2>🔹 Space Complexity</h2>
+              <p>O(1) — Selection Sort is an in-place algorithm.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+      
+        
     </main>
-    <script src="selection_script.js"></script>
-  </body>
+    
+
+    <script src="script.js"></script>
+</body>
 </html>
