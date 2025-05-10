@@ -56,10 +56,61 @@
           </svg>
         </button>
         <div class="panel-content">
-          <h2 class="panel-title">Sliding Panel Title</h2>
-          <p class="panel-text">
-            Your content goes here. Add anything you want!
-          </p>
+          <section class="linear-search-doc">
+    <h1 class="linear-title">Linear Search Algorithm</h1>
+    <p class="linear-subtitle">Simple sequential search through elements</p>
+
+    <div class="linear-content">
+        <h2>🔹 What is Linear Search?</h2>
+        <p>Linear Search is a basic search algorithm that checks each element of the list sequentially until the desired element is found or the list ends.</p>
+
+        <h2>🔹 Step-by-Step Process</h2>
+        <ol>
+            <li>Start from the first element of the array.</li>
+            <li>Compare the current element with the target.</li>
+            <li>If it matches, return the index.</li>
+            <li>If not, move to the next element.</li>
+            <li>Repeat until the element is found or the array ends.</li>
+        </ol>
+
+        <h2>🔹 Example Walkthrough</h2>
+        <p>Array: <strong>[4, 7, 1, 9, 3]</strong>, Target: <strong>9</strong></p>
+        <ul>
+            <li>Check 4 → Not a match</li>
+            <li>Check 7 → Not a match</li>
+            <li>Check 1 → Not a match</li>
+            <li>Check 9 → Match found at index 3</li>
+        </ul>
+
+        <h2>🔹 Time Complexity</h2>
+        <table class="linear-table">
+            <thead>
+                <tr>
+                    <th>Case</th>
+                    <th>Time Complexity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Best Case (First Element)</td>
+                    <td>O(1)</td>
+                </tr>
+                <tr>
+                    <td>Average Case</td>
+                    <td>O(n)</td>
+                </tr>
+                <tr>
+                    <td>Worst Case (Last or Not Found)</td>
+                    <td>O(n)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🔹 Space Complexity</h2>
+        <p>O(1) — No extra space needed beyond input.</p>
+    </div>
+</section>
+
         </div>
       </div>
     </main>

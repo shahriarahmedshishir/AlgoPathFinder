@@ -142,3 +142,11 @@ class TreeNode {
       displayTree(node.right, parentElement, level + 1, x + offset, y + 70, offset / 2);
     }
   }
+  function toggleSlidingPanel() {
+  const panel = document.getElementById("slidingPanel");
+  panel.classList.toggle("open");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("togglePanelButton").addEventListener("click", toggleSlidingPanel);
+});

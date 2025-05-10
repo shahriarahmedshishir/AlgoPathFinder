@@ -56,10 +56,60 @@
           </svg>
         </button>
         <div class="panel-content">
-          <h2 class="panel-title">Sliding Panel Title</h2>
-          <p class="panel-text">
-            Your content goes here. Add anything you want!
-          </p>
+          <section class="binary-search-doc">
+    <h1 class="binary-title">Binary Search Algorithm</h1>
+    <p class="binary-subtitle">Efficient search in sorted arrays using divide and conquer</p>
+
+    <div class="binary-content">
+        <h2>🔹 What is Binary Search?</h2>
+        <p>Binary Search is an efficient algorithm for finding an item in a sorted array by repeatedly dividing the search interval in half.</p>
+
+        <h2>🔹 Step-by-Step Process</h2>
+        <ol>
+            <li>Find the middle element of the array.</li>
+            <li>If the target equals the middle element, return its index.</li>
+            <li>If the target is less than the middle element, repeat the search on the left half.</li>
+            <li>If the target is greater, repeat the search on the right half.</li>
+            <li>Continue this process until the element is found or the interval is empty.</li>
+        </ol>
+
+        <h2>🔹 Example Walkthrough</h2>
+        <p>Sorted array: <strong>[1, 3, 5, 7, 9, 11]</strong>, Target: <strong>7</strong></p>
+        <ul>
+            <li>Step 1: Middle = 5 (index 2), 7 > 5 → Search right half</li>
+            <li>Step 2: Middle = 9 (index 4), 7 < 9 → Search left half of right part</li>
+            <li>Step 3: Middle = 7 (index 3), Match found!</li>
+        </ul>
+
+        <h2>🔹 Time Complexity</h2>
+        <table class="binary-table">
+            <thead>
+                <tr>
+                    <th>Case</th>
+                    <th>Time Complexity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Best Case (Middle Match)</td>
+                    <td>O(1)</td>
+                </tr>
+                <tr>
+                    <td>Average Case</td>
+                    <td>O(log n)</td>
+                </tr>
+                <tr>
+                    <td>Worst Case</td>
+                    <td>O(log n)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🔹 Space Complexity</h2>
+        <p>O(1) for iterative, O(log n) for recursive due to call stack.</p>
+    </div>
+</section>
+
         </div>
       </div>
     </main>

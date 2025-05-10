@@ -22,3 +22,145 @@
 line {
 transition: all 0.5s ease; /* Smooth transition for line animation */
 }
+.sliding-panel {
+  position: fixed;
+  top: 0;
+  right: -70%;
+  width: 70%;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.sliding-panel.open {
+  right: 0;
+}
+
+.toggle-button {
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: #16404d;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.toggle-button:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrow-icon {
+  width: 24px;
+  height: 24px;
+  color: #ffffff;
+  transition: transform 0.3s;
+}
+
+.sliding-panel.open .arrow-icon {
+  transform: rotate(180deg);
+}
+
+.panel-content {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.panel-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #16404d;
+}
+
+.panel-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+section {
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #2d3748;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+ol, ul {
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+h2 {
+    margin-top: 25px;
+    font-size: 1.3rem;
+    color: #4a5568;
+}
+
+strong {
+    color: #2b6cb0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #edf2f7;
+    color: #2d3748;
+}
+
+.bubble-sort-doc,
+.binary-search-doc,
+.linear-search-doc {
+    border-left: 5px solid #3182ce;
+    padding-left: 20px;
+}
+
+/* Subtitle styling */
+.bubble-subtitle,
+.binary-subtitle,
+.linear-subtitle {
+    font-size: 1.1rem;
+    color: #718096;
+    margin-bottom: 20px;
+}
