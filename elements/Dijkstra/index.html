@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dijkstra's Algorithm </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <h2>Dijkstra's Algorithm </h2>
+    <label>Enter edges</label>
+    <input type="text" id="edgesInput" placeholder="format: u,v,weight;u,v,weight" value="0,1,4;0,2,1;2,1,2;1,3,1;2,3,5"><br>
+    <div class="button-container">
+      <input type="number" id="startNode" placeholder="Enter source node">
+      <button onclick="startDijkstra()">Run</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="graphContainer"></div>
+    <div id="log"></div>
+    <div id="finalOutput"></div>
+  </div>
+
+  <p id="stepInfo" class="font-mono text-lg text-gray-700"></p>
+<div id="slidingPanel" class="sliding-panel">
+  <button id="togglePanelButton" class="toggle-button">
+    <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </button>
+  <div class="panel-content">
+    <section class="dijkstra-doc">
+      <h1 class="dijkstra-title">Dijkstra's Algorithm</h1>
+      <p class="dijkstra-subtitle">
+        Find the shortest path from a single source to all vertices!
+      </p>
+
+      <div class="dijkstra-content">
+        <h2>🔹 What is Dijkstra's Algorithm?</h2>
+        <p>
+          Dijkstra's Algorithm is used to find the shortest paths from a single source node to all other nodes in a weighted graph with non-negative edge weights.
+        </p>
+
+        <h2>🔹 Step-by-Step Process</h2>
+        <ol>
+          <li>Initialize the distance to the source as 0 and all others as ∞.</li>
+          <li>Mark all nodes unvisited. Set the source as the current node.</li>
+          <li>
+            For the current node, consider all of its unvisited neighbors and calculate tentative distances.
+          </li>
+          <li>Update the neighbor's distance if the new path is shorter.</li>
+          <li>Once all neighbors are considered, mark the current node as visited.</li>
+          <li>Choose the unvisited node with the smallest tentative distance as the new current node.</li>
+          <li>Repeat until all nodes are visited or destination is reached.</li>
+        </ol>
+
+        <h2>🔹 Example</h2>
+        <p>Graph: A → B (4), A → C (2), B → C (5), B → D (10), C → D (3)</p>
+        <p>Start: A → Shortest paths: A→C (2), A→B (4), A→D (5)</p>
+
+        <h2>🔹 Time Complexity</h2>
+        <table class="dijkstra-table">
+          <thead>
+            <tr>
+              <th>Using</th>
+              <th>Time Complexity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Array</td>
+              <td>O(V²)</td>
+            </tr>
+            <tr>
+              <td>Min-Heap (Priority Queue)</td>
+              <td>O((V + E) log V)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>🔹 Space Complexity</h2>
+        <p>O(V) for distance storage and O(V + E) for the graph representation.</p>
+      </div>
+    </section>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
