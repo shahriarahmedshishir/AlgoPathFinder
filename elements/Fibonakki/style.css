@@ -1,0 +1,189 @@
+body {
+  background: #f0f4f8;
+  font-family: "Segoe UI", sans-serif;
+}
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px #0001;
+  padding: 32px 24px;
+  text-align: center;
+}
+#fibInput {
+  width: 150px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #16404d;
+  font-size: 1rem;
+}
+input,
+button {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid #16404d;
+  margin: 0 8px 24px 0;
+  font-size: 1rem;
+}
+button {
+  background: #16404d;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #22677a;
+}
+#fibContainer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 32px 0 16px 0;
+  min-height: 60px;
+}
+.fib-circle {
+  width: 48px;
+  height: 48px;
+  background: #16404d;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.fib-circle.active {
+  background: #f4a261;
+  color: #222;
+}
+#stepInfo {
+  margin: 12px 0;
+  font-size: 1.1rem;
+  color: #22677a;
+}
+#result {
+  font-size: 1.2rem;
+  color: #2d6a4f;
+  margin-top: 10px;
+}
+.sliding-panel {
+  position: fixed;
+  top: 0;
+  right: -70%;
+  width: 70%;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.sliding-panel.open {
+  right: 0;
+}
+
+.toggle-button {
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: #16404d;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.toggle-button:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrow-icon {
+  width: 24px;
+  height: 24px;
+  color: #ffffff;
+  transition: transform 0.3s;
+}
+
+.sliding-panel.open .arrow-icon {
+  transform: rotate(180deg);
+}
+
+.panel-content {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.panel-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #16404d;
+}
+
+.panel-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+.fibonacci-doc {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+.fibonacci-doc h1 {
+  color: #2980b9;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.5rem;
+}
+
+.fibonacci-doc h2 {
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  color: #2c3e50;
+}
+
+.fibonacci-doc code {
+  background-color: #eef;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: Consolas, monospace;
+}
+
+.fibonacci-doc pre {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: Consolas, monospace;
+  margin-top: 0.5rem;
+}
+
+.fibonacci-doc ul {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.fibonacci-doc ul li {
+  margin: 0.4rem 0;
+}
