@@ -1,84 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body class="w-[100vw] h-[100vh] bg-gray-200 flex flex-col gap-5 justify-center items-center">
-    <div class="flex justify-center items-center flex-col w-full gap-2 h-[15%]  ">
-        <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas" class="w-180 h-20 border-[1px] border-blue-500/50 rounded-full px-5 bg-gray-300 shadow-md focus-within:outline-[1px] focus-within:outline-blue-500/50">
-        <div class="flex justify-center items-center w-full h-20 gap-5 ">
-            <button onclick="createTree()" class=" button w-40 h-10 rounded-xl text-white cursor-pointer bg-blue-500 shadow-lg shadow-blue-500/50 font-serif">Generate Tree</button>
-            <button onclick="startDFS()" class=" button w-20 h-10 rounded-xl text-white cursor-pointer bg-blue-500 shadow-lg shadow-blue-500/50 font-serif">Start DFS</button>
-        </div>
+  </head>
+  <body
+    class="w-[100vw] h-[100vh] bg-gray-200 flex flex-col gap-5 justify-center items-center"
+  >
+    <div class="flex justify-center items-center flex-col w-full gap-2 h-[15%]">
+      <input
+        type="text"
+        id="arrayInput"
+        placeholder="Enter numbers separated by commas"
+        class="w-180 h-20 border-[1px] border-blue-500/50 rounded-full px-5 bg-gray-300 shadow-md focus-within:outline-[1px] focus-within:outline-blue-500/50"
+      />
+      <div class="flex justify-center items-center w-full h-20 gap-5">
+        <button
+          onclick="createTree()"
+          class="button w-40 h-10 rounded-xl text-white cursor-pointer bg-blue-500 shadow-lg shadow-blue-500/50 font-serif"
+        >
+          Generate Tree
+        </button>
+        <button
+          onclick="startDFS()"
+          class="button w-20 h-10 rounded-xl text-white cursor-pointer bg-blue-500 shadow-lg shadow-blue-500/50 font-serif"
+        >
+          Start DFS
+        </button>
+      </div>
     </div>
-    <div id="treeContainer" class="w-[98%] h-[80%] rounded-xl "></div>
+    <div id="treeContainer" class="w-[98%] h-[80%] rounded-xl"></div>
 
-<div id="slidingPanel" class="sliding-panel">
-  <button id="togglePanelButton" class="toggle-button">
-    <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <polyline points="15 18 9 12 15 6"></polyline>
-    </svg>
-  </button>
-  <div class="panel-content">
-    <section class="dfs-doc">
-    <h1 class="dfs-title">Depth-First Search (DFS) Algorithm</h1>
-    <p class="dfs-subtitle">Explore graph deeply before backtracking</p>
+    <div id="slidingPanel" class="sliding-panel">
+      <button id="togglePanelButton" class="toggle-button">
+        <svg
+          class="arrow-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <div class="panel-content">
+        <section class="dfs-doc">
+          <h1 class="dfs-title">Depth-First Search (DFS) Algorithm</h1>
+          <p class="dfs-subtitle">Explore graph deeply before backtracking</p>
 
-    <div class="dfs-content">
-        <h2>🔹 What is DFS?</h2>
-        <p>Depth-First Search (DFS) is a graph traversal technique that explores as far as possible along each branch before backtracking. It uses a stack (explicit or recursive call stack).</p>
+          <div class="dfs-content">
+            <h2>🔹 What is DFS?</h2>
+            <p>
+              Depth-First Search (DFS) is a graph traversal technique that
+              explores as far as possible along each branch before backtracking.
+              It uses a stack (explicit or recursive call stack).
+            </p>
 
-        <h2>🔹 Step-by-Step Process</h2>
-        <ol>
-            <li>Start from the root (or any starting node).</li>
-            <li>Mark the node as visited.</li>
-            <li>Recursively or iteratively visit all unvisited neighbors.</li>
-            <li>Backtrack when no unvisited neighbors are found.</li>
-        </ol>
+            <h2>🔹 Step-by-Step Process</h2>
+            <ol>
+              <li>Start from the root (or any starting node).</li>
+              <li>Mark the node as visited.</li>
+              <li>Recursively or iteratively visit all unvisited neighbors.</li>
+              <li>Backtrack when no unvisited neighbors are found.</li>
+            </ol>
 
-        <h2>🔹 Example Walkthrough</h2>
-        <p>Graph: <strong>{ A: [B, C], B: [D, E], C: [F], D: [], E: [], F: [] }</strong>, Start: <strong>A</strong></p>
-        <ul>
-            <li>Visit A → Stack: [A]</li>
-            <li>Go to B → Stack: [A, B]</li>
-            <li>Go to D → Stack: [A, B, D]</li>
-            <li>D has no unvisited → backtrack to B</li>
-            <li>Go to E → Stack: [A, B, E]</li>
-            <li>Backtrack to A → Go to C → Then F</li>
-            <li>Final Order: A → B → D → E → C → F</li>
-        </ul>
+            <h2>🔹 Example Walkthrough</h2>
+            <p>
+              Graph:
+              <strong
+                >{ A: [B, C], B: [D, E], C: [F], D: [], E: [], F: [] }</strong
+              >, Start: <strong>A</strong>
+            </p>
+            <ul>
+              <li>Visit A → Stack: [A]</li>
+              <li>Go to B → Stack: [A, B]</li>
+              <li>Go to D → Stack: [A, B, D]</li>
+              <li>D has no unvisited → backtrack to B</li>
+              <li>Go to E → Stack: [A, B, E]</li>
+              <li>Backtrack to A → Go to C → Then F</li>
+              <li>Final Order: A → B → D → E → C → F</li>
+            </ul>
 
-        <h2>🔹 Time Complexity</h2>
-        <table class="dfs-table">
-            <thead>
+            <h2>🔹 Time Complexity</h2>
+            <table class="dfs-table">
+              <thead>
                 <tr>
-                    <th>Graph Type</th>
-                    <th>Time Complexity</th>
+                  <th>Graph Type</th>
+                  <th>Time Complexity</th>
                 </tr>
-            </thead>
-            <tbody>
+              </thead>
+              <tbody>
                 <tr>
-                    <td>Using Adjacency List</td>
-                    <td>O(V + E)</td>
+                  <td>Using Adjacency List</td>
+                  <td>O(V + E)</td>
                 </tr>
                 <tr>
-                    <td>Using Adjacency Matrix</td>
-                    <td>O(V<sup>2</sup>)</td>
+                  <td>Using Adjacency Matrix</td>
+                  <td>O(V<sup>2</sup>)</td>
                 </tr>
-            </tbody>
-        </table>
+              </tbody>
+            </table>
 
-        <h2>🔹 Space Complexity</h2>
-        <p>O(V) — due to the visited list and the recursion stack.</p>
+            <h2>🔹 Space Complexity</h2>
+            <p>O(V) — due to the visited list and the recursion stack.</p>
+          </div>
+        </section>
+      </div>
     </div>
-</section>
-
-  </div>
-</div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
